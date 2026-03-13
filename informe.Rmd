@@ -2,10 +2,9 @@
 # --- Metadatos Básicos ---
 title: "Título del Trabajo Final"
 author:
-   - Primer participante
-   - Segundo participante
-   - Tercer participante
-date: "Febrero 2026"
+   -  Mariangela Laya 30849318
+   - Santiago Colmenares 32270162  
+date: "Abril 2026"
 
 # --- Metadatos Específicos de Plantilla ---
 degree: "Computación I"
@@ -60,36 +59,32 @@ library(scales)
 Introducción del trabajo de investigación
 
 \chapter{Planteamiento del Problema}
-Describir planteamiento del problema\
+ Los videojuegos con el paso de los años se han vuelto un sector financiero de tamaño considerable, llegando a denominarse como la industria de los videojuegos, donde las empresas pueden valerse de ganar dinero con distintas estrategias monetizándolos. Sin embargo, la industria de los videojuegos es muy volátil por distintos factores como la tecnología, las tendencias, la competencia y la economía global. Nintendo, Sony y Microsoft se han consolidado como tres de las empresas más grandes y renombradas dentro de la industria, donde han tenido sus altas y bajas dentro del mercado a nivel global.
+La falta de comparaciones con las ventas netas de cada empresa tiene una repercusión en el desarrollo de estrategias  de ventas dentro de la industria. El análisis estadístico permite hallar patrones y tendencias, en las que se visualice el rendimiento de cada empresa y se puedan obtener comparaciones. Debido a esto, se plantea las siguientes preguntas de investigación:
 
-Argumento final. Debido a esto, se plantea las siguientes preguntas de investigación:\
+**1.**¿Qué empresa tiene la mayor cantidad de ventas globales?
 
+**2.**¿Cuál empresa ha tenido el pico más alto de ventas globales?
 
-\textbf{1.}	Pregunta1\
-
-\textbf{2.}	Pregunta2\
-
-\textbf{3.}	Pregunta3\
-
+**3.**¿Cuáles son los 10 juegos más vendidos entre las tres empresas?
 
 \section{Justificación}
-
-Justificación del trabajo de investigación\
+   Nintendo, Microsoft y Sony, no solo compiten entre ellos en el mercado de los videojuegos, sino que también dictaminan la mayoría de veces  las tendencias tecnológicas y de consumo a nivel mundial en esta área, por esta razón se quiere cuantificar el impacto real que tienen estas tres corporaciones en un entorno de alta volatilidad del mercado.
+Como fue mencionado anteriormente, existe la falta de comparaciones en las ventas netas de cada una de estas empresas, ya que sin un análisis estadístico que compara los datos de ventas globales de estas tres corporaciones, refiriéndose a los picos de ventas como a los bajones de las mismas, las estrategias de ventas corren el riesgo de solo basarse en percepciones cualitativas o intuiciones lógica en vez de datos y evidencias sólidas. 
+La conclusión de este planteamiento no solo beneficia a analistas financieros, sino también a desarrolladores del área de los video juego y publicadores de los mismos  interesados en entender las dinámicas de competencia en el mercado, ya que al finalizar el estudio, se contará con una visión clara de quién domina el sector y quién en eficiencia de ventas, permitiendo una visión más acertada sobre el comportamiento futuro de la industria.
 
 \section{Objetivos}
  
 \subsection{Objetivo General}
-\begin{itemize}
-  \item{Describir objetivo general del trabajo de investigación}
-\end{itemize}
+
+   Analizar de manera comparativa el desempeño en ventas de videojuegos de las empresas Nintendo, Sony y Microsoft, con el fin de identificar patrones, tendencias y productos destacados en el mercado.
 
 \subsection{Objetivos Específicos}
-\begin{itemize}
-  \item{Describir objetivo 1 del trabajo de investigación}
-  \item{Describir objetivo 2 del trabajo de investigación}
-  \item{Describir objetivo 3 del trabajo de investigación}
-\end{itemize}
-
+\begin{enumerate}
+  \item Cuantificar las ventas totales de cada empresa.
+  \item Comparar las ventas anuales de cada empresa en el tiempo.
+  \item Determinar el top 10 juegos más vendidos de cada empresa.
+\end{enumerate}
 
 \section{Cobertura}
 

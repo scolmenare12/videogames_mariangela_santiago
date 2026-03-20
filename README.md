@@ -1,7 +1,7 @@
 # videogames_mariangela_santiago
 Repositorio de Mariangela Laya 30849318  y Santiago Colmenares 32270162 Grupo 6.2.2 de la data set de videogames
 
-Planteamiento del problema 
+# Planteamiento del problema 
   Los videojuegos con el paso de los años se han vuelto un sector financiero de tamaño considerable, llegando a denominarse como la industria de los videojuegos, donde las empresas pueden valerse de ganar dinero con distintas estrategias monetizándolos. Sin embargo, la industria de los videojuegos es muy volátil por distintos factores como la tecnología, las tendencias, la competencia y la economía global. Nintendo, Sony y Microsoft se han consolidado como tres de las empresas más grandes y renombradas dentro de la industria, donde han tenido sus altas y bajas dentro del mercado a nivel global.
 La falta de comparaciones con las ventas netas de cada empresa tiene una repercusión en el desarrollo de estrategias  de ventas dentro de la industria. El análisis estadístico permite hallar patrones y tendencias, en las que se visualice el rendimiento de cada empresa y se puedan obtener comparaciones. Es por ello que se plantean las siguientes preguntas de investigación:
 1-¿Qué empresa tiene la mayor cantidad de ventas globales?

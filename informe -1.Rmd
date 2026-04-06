@@ -1,0 +1,210 @@
+---
+# --- Metadatos Básicos ---
+title: "Título del Trabajo Final"
+author:
+   -  Mariangela Laya 30849318
+   - Santiago Colmenares 32270162  
+date: "Abril 2026"
+
+# --- Metadatos Específicos de Plantilla ---
+degree: "Computación I"
+director: 
+  - Jesus Ochoa 
+  - Oliver Triveño
+lugar: "Caracas"
+facultad: 
+  - Facultad de Ciencias Económicas y Sociales
+  - Escuela de Estadistica y Ciencias Actuariales
+# Ruta al escudo (relativa al archivo .Rmd)
+escudo: "Latex/Classes/Escudos/faces"
+
+# --- Bibliografía ---
+bibliography: bibliografia.bib
+
+# --- Configuración de Salida ---
+output: 
+  pdf_document:
+    template: template.tex  # Llamamos al archivo de plantilla
+    keep_tex: true                 # Útil para ver errores si ocurren
+    toc: true                      # Generar índice
+    number_sections: true
+    citation_package: natbib       # Importante: forzar natbib porque tu plantilla lo usa
+
+# --- Resumen (Abstract) ---
+abstract: |
+  Resumen del trabajo de investigación...
+---
+
+```{r setup, include=FALSE}
+# Configuración global de chunks
+knitr::opts_chunk$set(
+  echo = FALSE,        # Mostrar código
+  warning = FALSE,    # Ocultar advertencias
+  message = FALSE,    # Ocultar mensajes de carga
+  fig.align = "center",
+  out.width = "90%",
+  fig.pos = "H",
+  out.extra = ""
+)
+
+# Cargar librerías necesarias
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(scales)
+```
+
+\chapter*{Introducción}
+
+Introducción del trabajo de investigación
+
+\chapter{Planteamiento del Problema}
+ Los videojuegos con el paso de los años se han vuelto un sector financiero de tamaño considerable, llegando a denominarse como la industria de los videojuegos, donde las empresas pueden valerse de ganar dinero con distintas estrategias monetizándolos. Sin embargo, la industria de los videojuegos es muy volátil por distintos factores como la tecnología, las tendencias, la competencia y la economía global. Nintendo, Sony y Microsoft se han consolidado como tres de las empresas más grandes y renombradas dentro de la industria, donde han tenido sus altas y bajas dentro del mercado a nivel global.
+La falta de comparaciones con las ventas netas de cada empresa tiene una repercusión en el desarrollo de estrategias  de ventas dentro de la industria. El análisis estadístico permite hallar patrones y tendencias, en las que se visualice el rendimiento de cada empresa y se puedan obtener comparaciones. Debido a esto, se plantea las siguientes preguntas de investigación:
+
+**1.**¿Qué empresa tiene la mayor cantidad de ventas globales?
+
+**2.**¿Cuál empresa ha tenido el pico más alto de ventas globales?
+
+**3.**¿Cuáles son los 10 juegos más vendidos entre las tres empresas?
+
+\section{Justificación}
+   Nintendo, Microsoft y Sony, no solo compiten entre ellos en el mercado de los videojuegos, sino que también dictaminan la mayoría de veces  las tendencias tecnológicas y de consumo a nivel mundial en esta área, por esta razón se quiere cuantificar el impacto real que tienen estas tres corporaciones en un entorno de alta volatilidad del mercado.
+Como fue mencionado anteriormente, existe la falta de comparaciones en las ventas netas de cada una de estas empresas, ya que sin un análisis estadístico que compara los datos de ventas globales de estas tres corporaciones, refiriéndose a los picos de ventas como a los bajones de las mismas, las estrategias de ventas corren el riesgo de solo basarse en percepciones cualitativas o intuiciones lógica en vez de datos y evidencias sólidas. 
+La conclusión de este planteamiento no solo beneficia a analistas financieros, sino también a desarrolladores del área de los video juego y publicadores de los mismos  interesados en entender las dinámicas de competencia en el mercado, ya que al finalizar el estudio, se contará con una visión clara de quién domina el sector y quién en eficiencia de ventas, permitiendo una visión más acertada sobre el comportamiento futuro de la industria.
+
+\section{Objetivos}
+ 
+\subsection{Objetivo General}
+
+   Analizar de manera comparativa el desempeño en ventas de videojuegos de las empresas Nintendo, Sony y Microsoft, con el fin de identificar patrones, tendencias y productos destacados en el mercado.
+
+\subsection{Objetivos Específicos}
+\begin{enumerate}
+  \item Cuantificar las ventas totales de cada empresa.
+  \item Comparar las ventas anuales de cada empresa en el tiempo.
+  \item Determinar el top 10 juegos más vendidos de cada empresa.
+\end{enumerate}
+
+\section{Cobertura}
+
+\subsection{Horizontal}
+
+La cobertura horizontal comprende las características de cada videojuego del dataset . Contienen descripciones cualitativas como por ejemplo el nombre, el género y la plataforma, mientras que los datos cuantitativos se refiere a las ventas en determinada región geográfica y los años de publicación.  
+
+
+\begin{table}[ht]
+\centering
+\caption{Variables consideradas en el estudio} 
+\resizebox{12cm}{!} {
+\begin{tabular}{cll}
+  \hline
+  \textbf{TIPO} & \textbf{VARIABLE} & \textbf{DESCRIPCIÓN} \\ 
+  \hline
+  Categórica & Name & Nombre comercial del videojuego \\ 
+  Numérica & Year & Año de lanzamiento del título \\ 
+  Categórica & Publisher & Compañía editora responsable de la distribución \\ 
+  Numérica & Global Sales & Suma total de ventas a nivel mundial \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\subsection{Vertical}
+
+La cobertura vertical contiene un total de    registros. Cada fila representa un videojuego publicado. El estudio abarca los juegos de Nintendo, Sony y Microsoft, con un tiempo desde 1983 hasta 2016.
+
+\section{Periodo de Referencia}
+
+El dataset corresponde al repositorio abierto de Kaggle (“Video Game Sales with Ratings”), extraído del portal VGChartz. El periodo de referencia para el análisis descriptivo se centra en el intervalo de 1983-2016. 
+
+\section{Variables}
+
+Las variables principales en el estudio son Nintendo, Sony, Microsoft, estos son los publishers en los que nos basaremos para comparar sus ventas y determinar cuál de las tres compañías domina el sector y es más eficiente con sus ventas.
+Como variables explicativas o independientes se analizan:
+
+\begin{enumerate}
+  \item Variables Temporales: \textbf{Year}
+  \item Variables Categóricas: \textbf{Name}
+  \item Variables Geográficas: \textbf{Global Sales Millions}
+\end{enumerate}
+
+
+\chapter{Marco Teórico}
+
+
+\section{Bases Teóricas}
+
+
+
+\subsection{}
+
+
+\subsection{Definición 2}
+
+Descripción de la definición 2\
+
+\subsection{Definición n}
+
+Descripción de la definición n\
+
+
+\chapter{Marco Metódico}
+
+
+ 
+\section{Bases metódicas utilizadas en el trabajo de investigación}
+
+
+\subsection{}
+
+
+
+
+\end{table}
+
+
+\subsubsection{}
+
+
+\chapter{Análisis de Resultados}
+
+
+
+\section{Presentación de resultados 1}
+
+Descripción\
+
+\section{Presentación de resultados 2}
+
+Descripción\
+
+\section{Presentación de resultados n}
+
+Descripción\
+
+\chapter{Conclusiones y Recomendaciones}
+
+\textbf{1.-} Conclusion 1 del trabajo de investigación.\
+
+\textbf{Recomendación} 
+Recomendación 1 del trabajo de investigación.\
+
+\textbf{2.-} Conclusion 2 del trabajo de investigación.\
+
+\textbf{Recomendación} 
+Recomendación 2 del trabajo de investigación.\
+
+\textbf{n.-} Conclusion n del trabajo de investigación.\
+
+\textbf{Recomendación} Recomendación n del trabajo de investigación.\
+
+\appendix
+\renewcommand{\thechapter}{\Alph{chapter}}
+
+\chapter{Anexo A}
+
+\chapter{Anexo B}
+
+\chapter{Anexo C}
+

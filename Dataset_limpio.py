@@ -64,5 +64,3 @@ top_publishers_sales = top_publishers_sales_df[['ID', 'Publisher', 'Total_Sales_
 
 # Guardar los dataframes en csv
 df_limpio.to_csv('videogame_sales.csv', index=False)
-top_publishers.to_csv('top_publishers.csv', index=False)
-top_publishers_sales.to_csv('top_publishers_sales.csv', index=False)

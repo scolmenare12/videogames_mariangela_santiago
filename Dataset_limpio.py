@@ -24,6 +24,19 @@ print(f"Filas duplicadas eliminadas: {filas_despues}")
 
 # En este caso hay 0 filas duplicadas
 
+# Mismo criterio que script_limpieza.R: solo estos tres publishers (coincidencia exacta)
+publishers_r = [
+    'Nintendo',
+    'Sony Computer Entertainment',
+    'Microsoft Game Studios',
+]
+df_limpio = df_limpio[df_limpio['Publisher'].isin(publishers_r)].copy()
+
+# Excluir filas con año desconocido (valor literal "N/A" en el CSV)
+filas_antes_year = len(df_limpio)
+df_limpio = df_limpio[df_limpio['Year'].astype(str) != 'N/A'].copy()
+print(f"Filas eliminadas por Year = N/A: {filas_antes_year - len(df_limpio)}")
+
 print(df_limpio.columns.tolist())
 
 publisher_df = (
@@ -62,5 +75,4 @@ top_publishers_sales_df.insert(0, 'ID', range(1, len(top_publishers_sales_df) + 
 # Seleccion de las columnas para el DF top_publishers_sales
 top_publishers_sales = top_publishers_sales_df[['ID', 'Publisher', 'Total_Sales_Millions']].copy()
 
-# Guardar los dataframes en csv
-df_limpio.to_csv('videogame_sales.csv', index=False)
+

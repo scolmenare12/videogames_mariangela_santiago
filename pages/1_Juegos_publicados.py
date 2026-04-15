@@ -45,3 +45,17 @@ grafico_barras = (
     )
 )
 st.altair_chart(grafico_barras, width="stretch", theme="streamlit")
+
+st.markdown(
+    """
+### Interpretación de resultados
+
+Empate técnico en el catálogo: Existe una diferencia mínima entre Nintendo y Sony en cuanto al número de títulos publicados. Ambas compañías han mantenido una estrategia de producción masiva para alimentar sus múltiples generaciones de consolas.
+
+Relación Volumen vs. Ventas: Si recordamos el primer gráfico de "Ventas Globales", Nintendo tenía casi el triple de ventas que Sony, pero aquí vemos que tienen casi la misma cantidad de juegos. Esto confirma que Nintendo logra muchas más ventas por cada título individual que lanza (mayor eficiencia por juego).
+
+La posición de Microsoft: Con aproximadamente 200 juegos, el catálogo de Microsoft es significativamente más pequeño (menos de un tercio de los otros dos). Esto se explica por su entrada más tardía al mercado (2001) y un enfoque históricamente más concentrado en franquicias clave como Halo o Gears of War.
+
+Densidad del Dataset: Este gráfico ayuda a validar que el estudio es equilibrado para Nintendo y Sony, dándoles el mismo "peso" en cuanto a presencia de títulos, mientras que Microsoft actúa como un competidor con una librería más selecta.
+    """
+)

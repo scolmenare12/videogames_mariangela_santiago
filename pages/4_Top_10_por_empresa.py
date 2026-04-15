@@ -70,3 +70,40 @@ graf_top10 = (
     .properties(height=420)
 )
 st.altair_chart(graf_top10, width="stretch", theme="streamlit")
+
+st.markdown(f"### Empresa seleccionada: {empresa_top}")
+
+if empresa_top == "Nintendo":
+    st.markdown(
+        """
+El fenómeno de Wii Sports: Existe una brecha enorme entre el primer y el segundo lugar. Wii Sports vendió más del doble que Super Mario Bros., en gran parte porque se incluía en el paquete inicial de la consola Wii en la mayoría de los mercados.
+
+Franquicias Dominantes: La marca Mario aparece en 4 de los 10 puestos (contando Mario Kart y las versiones New), consolidándose como el pilar comercial de la empresa.
+
+Legado Histórico: Títulos clásicos como Tetris y Duck Hunt se mantienen en el Top 10 histórico, lo que demuestra el impacto de las primeras consolas (NES y Game Boy) en las cifras totales.
+
+Consistencia: El rango entre el puesto 5 y el 10 es muy estrecho (apenas 3.5 millones de diferencia), lo que indica un nivel de éxito muy similar para sus grandes éxitos de portátiles y consolas de sobremesa.
+        """
+    )
+elif empresa_top == "Sony Computer Entertainment":
+    st.markdown(
+        """
+El Imperio de Gran Turismo: La saga ocupa 5 de los 10 puestos más altos. Es, por mucho, la marca más valiosa para Sony según este dataset, logrando ventas consistentes a través de diferentes generaciones de consolas (PS1, PS2 y PS3).
+
+Alianzas Estratégicas: Se observa la importancia de los RPGs de Square Enix, con dos títulos de Final Fantasy en la lista. Esto subraya cómo los juegos de terceros (aunque publicados o asociados fuertemente con Sony en su momento) fueron vitales para su éxito.
+
+Variedad de Géneros: A diferencia de Nintendo, que se apoya mucho en plataformas y juegos familiares, el Top de Sony es más variado, incluyendo simulación de carreras, RPGs épicos, lucha (Tekken) y plataformas (Crash Bandicoot).
+
+Escala de Ventas: Es interesante notar que el juego más vendido de Sony (~15 M) está muy por debajo de los niveles de los líderes de Nintendo (~82 M o ~40 M). Esto sugiere que el éxito de Sony tiende a repartirse entre una biblioteca más amplia de juegos medianamente masivos, en lugar de concentrarse en un solo fenómeno global.
+        """
+    )
+elif empresa_top == "Microsoft Game Studios":
+    st.markdown(
+        """
+El Efecto "Bundle": Al igual que ocurrió con Wii Sports en Nintendo, Kinect Adventures! ocupa el primer lugar con una ventaja considerable (~22 M). Esto se debe a que se vendía incluido con el sensor Kinect, convirtiéndose en el título más distribuido de la marca.
+
+"La Casa de Halo": El impacto de esta franquicia es impresionante: ocupa 6 de los 10 puestos. Esto demuestra que la identidad de Xbox durante años dependió directamente de la saga del Jefe Maestro.
+
+Diversificación con Minecraft: Es notable ver a Minecraft en el 5° puesto. Aunque es un fenómeno global multiplataforma, su presencia aquí refleja su enorme peso dentro del ecosistema de Microsoft tras la adquisición de Mojang.
+        """
+    )

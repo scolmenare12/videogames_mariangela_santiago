@@ -103,3 +103,11 @@ capa_etiquetas = (
 )
 capas_pie = (capa_arc + capa_etiquetas).properties(height=420)
 st.altair_chart(capas_pie, width="stretch", theme="streamlit")
+
+st.markdown(
+    """
+### Liderazgo de mercado de Nintendo: Domina ampliamente la grafica representadno más del 67% del total combinado de estas 3 empresas. Sus ventas triplican a las de Sony en esta estudio.
+
+### Competencia directa de Sony: Mantiene una posición sólida en el segundo lugar mientras que Microsoft ocupa una porción significativamente menor, representando menos del 10% del total. Esto refleja una brecha considerable entre Sony y Microsoft en términos de ventas globales acumuladas dentro del dataset.
+    """
+)

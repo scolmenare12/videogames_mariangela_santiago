@@ -59,7 +59,7 @@ except FileNotFoundError:
 
 tabla = _tabla_descriptiva(df_videogame_sales)
 
-st.subheader("Tabla 4.1 — Resultados descriptivos")
+st.subheader("Tabla Resultados descriptivos")
 st.dataframe(
     tabla,
     width="stretch",

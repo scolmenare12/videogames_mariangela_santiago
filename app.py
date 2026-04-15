@@ -163,3 +163,50 @@ elif vista == "top_publishers_sales":
     )
     capas_pie = (capa_arc + capa_etiquetas).properties(height=420)
     st.altair_chart(capas_pie, width="stretch", theme="streamlit")
+elif vista == "ventas_por_ano":
+    st.markdown("### Ventas globales por año y empresa")
+    st.caption(
+        "Suma de ventas en millones de unidades por año para cada empresa. "
+        "Cada línea usa el color corporativo de la editorial."
+    )
+    df_ano = (
+        df_videogame_sales.dropna(subset=["Year"])
+        .assign(Year=lambda d: d["Year"].astype(int))
+        .groupby(["Publisher", "Year"], as_index=False)["Global_Sales_Millions"]
+        .sum()
+    )
+    escala_lineas = alt.Scale(
+        domain=list(PUBLISHER_ORDER),
+        range=[PUBLISHER_COLORS[p] for p in PUBLISHER_ORDER],
+    )
+    base_lineas = (
+        alt.Chart(df_ano)
+        .encode(
+            x=alt.X("Year:O", title="Año", sort="ascending"),
+            y=alt.Y(
+                "Global_Sales_Millions:Q",
+                title="Ventas (millones de unidades)",
+            ),
+            color=alt.Color(
+                "Publisher:N",
+                sort=list(PUBLISHER_ORDER),
+                scale=escala_lineas,
+                legend=alt.Legend(title="Empresa"),
+            ),
+            tooltip=[
+                alt.Tooltip("Publisher:N", title="Empresa"),
+                alt.Tooltip("Year:O", title="Año"),
+                alt.Tooltip(
+                    "Global_Sales_Millions:Q",
+                    title="Ventas (M)",
+                    format=".2f",
+                ),
+            ],
+        )
+    )
+    grafico_lineas = base_lineas.mark_line(
+        point=True,
+        strokeWidth=2.5,
+        interpolate="monotone",
+    ).properties(height=420)
+    st.altair_chart(grafico_lineas, width="stretch", theme="streamlit")
